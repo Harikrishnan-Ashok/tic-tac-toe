@@ -8,8 +8,8 @@ body {
 }
 
 .tileBox {
-  width: 50vh;
-  height: 50vh;
+  width: 40vh;
+  height: 40vh;
   background-color: #fff; /* Set your desired background color */
   border-radius: 20px; /* Rounded borders for the outer box */
   display: grid;
