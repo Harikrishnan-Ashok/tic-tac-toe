@@ -3,6 +3,7 @@ import "./App.css";
 
 export default function App() {
   const initialArr = [
+    { id: 0, value: null },
     { id: 1, value: null },
     { id: 2, value: null },
     { id: 3, value: null },
@@ -11,7 +12,6 @@ export default function App() {
     { id: 6, value: null },
     { id: 7, value: null },
     { id: 8, value: null },
-    { id: 9, value: null },
   ];
 
   const [arr, setArr] = useState(initialArr);
@@ -45,10 +45,10 @@ export default function App() {
   };
 
   const handleClick = (id) => {
-    if (winner || arr[id - 1]?.value) return;
+    if (winner || arr[id]?.value) return;
 
     const newArr = [...arr];
-    newArr[id - 1] = { ...newArr[id - 1], value: turn };
+    newArr[id - 1] = { ...newArr[id], value: turn };
     setArr(newArr);
 
     const newTurn = turn === "X" ? "O" : "X";
