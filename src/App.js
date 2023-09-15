@@ -48,7 +48,7 @@ export default function App() {
     if (winner || arr[id]?.value) return;
 
     const newArr = [...arr];
-    newArr[id - 1] = { ...newArr[id], value: turn };
+    newArr[id] = { ...newArr[id], value: turn };
     setArr(newArr);
 
     const newTurn = turn === "X" ? "O" : "X";
@@ -69,7 +69,9 @@ export default function App() {
   return (
     <div className="app-container">
       <h1 style={{ color: "white" }}>TIC-TAC-TOE</h1>
-      <h1>{winner ? `Winner: ${winner}` : `${turn}'s turn`}</h1>
+      <h1 style={{ color: winner ? "red" : "white" }}>
+        {winner ? `Winner: ${winner}` : `${turn}'s turn`}
+      </h1>
       <div className="tileBox">
         {arr.map((el) => (
           <Tile
