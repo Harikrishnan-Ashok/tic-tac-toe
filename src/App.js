@@ -15,7 +15,7 @@ export default function App() {
   ];
 
   const [arr, setArr] = useState(initialArr);
-  const [turn, setTurn] = useState("X");
+  const [turn, setTurn] = useState("❌");
   const [winner, setWinner] = useState(null);
 
   const calculateWinner = (squares) => {
@@ -51,7 +51,7 @@ export default function App() {
     newArr[id] = { ...newArr[id], value: turn };
     setArr(newArr);
 
-    const newTurn = turn === "X" ? "O" : "X";
+    const newTurn = turn === "❌" ? "⭕" : "❌";
     setTurn(newTurn);
 
     const result = calculateWinner(newArr.map((tile) => tile.value));
@@ -62,7 +62,7 @@ export default function App() {
 
   const resetGame = () => {
     setArr(initialArr);
-    setTurn("X");
+    setTurn("❌");
     setWinner(null);
   };
 
